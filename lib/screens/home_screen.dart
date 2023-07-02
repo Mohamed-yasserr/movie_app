@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/tabs/Home_tab.dart';
+import 'package:movie_app/tabs/browser_tab.dart';
+import 'package:movie_app/tabs/search_tab.dart';
+import 'package:movie_app/tabs/watchList_tab.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'home-screen';
@@ -9,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
+  List<Widget>tabs=[BroweserTab(),HomeTab(),SearchTab(),WatchListTab()];
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-
+      body: tabs[index],
     );
   }
 }
